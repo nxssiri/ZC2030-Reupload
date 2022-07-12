@@ -1,0 +1,163 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id               String             @id @default(cuid())
+  name             String?
+  email            String?            @unique
+  emailVerified    DateTime?
+  image            String?
+  publicAddress    String?            @db.Text
+  ethWallet        String?            @db.Text
+  role             Role               @default(PERSONAL)
+  accounts         Account[]
+  sessions         Session[]
+  CalculatorResult CalculatorResult[]
+  UserCalculator   UserCalculator[]
+  Transaction      Transaction[]
+}
+
+enum Role {
+  PERSONAL
+  ADMIN
+  BUSINESS
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model CalculatorCategory {
+  id              BigInt            @id @default(autoincrement())
+  type_id         BigInt?
+  name            String?           @db.VarChar(255)
+  calculatortype  CalculatorType?   @relation(fields: [type_id], references: [id], onDelete: Cascade, onUpdate: Restrict, map: "fk_category_id_to_type_id")
+  calculatorinput CalculatorInput[]
+
+  @@index([type_id], map: "fk_category_id_to_type_id")
+}
+
+model CalculatorInput {
+  id                 BigInt              @id @default(autoincrement())
+  category_id        BigInt?
+  name               String?             @db.VarChar(255)
+  factor             Float?
+  unit               String?             @db.VarChar(24)
+  calculatorcategory CalculatorCategory? @relation(fields: [category_id], references: [id], onDelete: Cascade, onUpdate: Restrict, map: "fk_category_id_to_input_id")
+  calculatorresult   CalculatorResult[]
+
+  @@index([category_id], map: "fk_category_id_to_input_id")
+}
+
+model CalculatorResult {
+  id              BigInt           @id @default(autoincrement())
+  input_id        BigInt?
+  user_id         String
+  quantity        Float?
+  result          Float?
+  calculatorinput CalculatorInput? @relation(fields: [input_id], references: [id], onDelete: Cascade, map: "fk_result_id_to_input_id")
+  user            User             @relation(fields: [user_id], references: [id], onDelete: Cascade, map: "fk_result_id_to_user_id")
+
+  @@index([input_id], map: "fk_result_id_to_input_id")
+  @@index([user_id], map: "fk_result_id_to_user_id")
+}
+
+model CalculatorType {
+  id                 BigInt               @id @default(autoincrement())
+  name               String?              @db.VarChar(255)
+  calculatorcategory CalculatorCategory[]
+  public             Boolean              @default(false)
+  UserCalculator     UserCalculator[]
+}
+
+model UserCalculator {
+  id             BigInt         @id @default(autoincrement())
+  user_id        String
+  type_id        BigInt
+  calculatorType CalculatorType @relation(fields: [type_id], references: [id], onDelete: Cascade, map: "fk_calculatorType_id_to_type_id")
+  user           User           @relation(fields: [user_id], references: [id], onDelete: Cascade, map: "fk_calculatorType_id_to_user_id")
+
+  @@index([type_id], map: "fk_calculatorType_id_to_type_id")
+  @@index([user_id], map: "fk_calculatorType_id_to_user_id")
+}
+
+model Project {
+  id              String  @id @default(cuid())
+  projectname     String
+  projectimage1   String
+  projectimage2   String
+  projectimage3   String
+  projectimage4   String
+  projectimage5   String
+  cptgbp          Decimal
+  latitude        Float
+  longitude       Float
+  streetname      String
+  city            String
+  county          String
+  country         String
+  totalsupply     Decimal
+  remainingsupply Decimal
+  ownername       String
+  ownerpicture    String
+  type            String
+  website         String?
+  description     String        @db.Text
+  datefounded     String
+  publicAddress   String?       @db.Text
+  ethWallet       String?       @db.Text
+  Transaction     Transaction[]
+}
+
+model Transaction {
+  id           String  @id @default(cuid())
+  date         String
+  amountTonnes Decimal
+  amountGbp    Decimal
+  paypal_id    String
+  project_id   String
+  user_id      String
+  status       String  @default("Pending")
+  project      Project @relation(fields: [project_id], references: [id], onDelete: Restrict, map: "fk_transaction_id_to_project_id")
+  user         User    @relation(fields: [user_id], references: [id], onDelete: Restrict, map: "fk_transaction_id_to_user_id")
+
+  @@index([project_id], map: "fk_transaction_id_to_project_id")
+  @@index([project_id], map: "fk_transaction_id_to_user_id")
+}
