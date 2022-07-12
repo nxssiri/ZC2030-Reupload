@@ -1,0 +1,153 @@
+.h1 {
+  width: 100%;
+  padding-top: 40px;
+  height: 100px;
+  padding-left: 50px;
+  /*background: #57bc90;*/
+}
+
+.h2 {
+  margin-top: 50px;
+  margin-left: 50px;
+  border-bottom: solid 3px #57bc90;
+  width: 80%;
+}
+
+.h3 {
+  margin-left: 50px;
+  font-size: 25px;
+}
+
+.container {
+  width: 100%;
+  background: #d2ede3;
+}
+
+.containerMargin5 {
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageContent {
+  width: 100%;
+  float: left;
+}
+
+.pageContentMain {
+  width: 100%;
+  float: left;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+
+  /**
+    Generated using https://www.cssmatic.com/box-shadow
+     */
+  -webkit-box-shadow: 0 0 50px -20px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 50px -20px rgba(0, 0, 0, 0.2);
+  box-shadow: 20px 30px 60px -20px rgba(0, 0, 0, 0.2);
+}
+
+.calculatorContainer {
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.calculatorBody {
+  width: 59%;
+  float: left;
+  text-transform: capitalize;
+}
+
+.progressBarBody {
+  width: 30%;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.formDiv {
+  padding-top: 2rem;
+  padding-right: 2rem;
+  padding-left: 1rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.form {
+  background: #ffffff;
+  border: solid 2px #57bc90;
+  border-radius: 0.75rem;
+  margin: 0.5rem;
+  color: black;
+  width: 90%;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.form:hover {
+  background: #a5a5af;
+  border: solid 2px #a5a5af;
+  border-radius: 0.75rem;
+  margin: 0.5rem;
+  color: black;
+  width: 90%;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.btnContainer {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.button {
+  color: white;
+  background: #0e9f6e;
+  border: solid 3px #0e9f6e;
+  width: 150px;
+  color: black;
+}
+
+.button:hover{
+  background: rgb(97, 193, 145);
+  border: solid 3px #61c191;
+}
+
+.buttonBack {
+  color: black;
+  background: #a5a5af;
+  border: solid 3px #a5a5af;
+  width: 150px;
+  text-transform: capitalize;
+}
+
+.buttonAdd {
+  color: black;
+  background: #a5a5af;
+  border: solid 0px #57bc90;
+  width: 150px;
+  font-size: 19px;
+  text-transform: capitalize;
+}
+
+.nav {
+  background-color: #a5a5af;
+}
+
+.navItems {
+  color: black !important;
+  font-size: 21px !important;
+}
+
+.navItems:hover {
+  background: #a5a5af;
+}

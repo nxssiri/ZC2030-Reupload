@@ -1,0 +1,89 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');*/
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Nunito+Sans:wght@200;400;600;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  /*padding-top: 60px;*/
+  /*font-family: 'Poppins', sans-serif;*/
+  font-family: 'Noto Sans', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+#page-wrap {
+  /*text-align: center;*/
+  /*overflow: auto;*/
+}
+
+.bm-item {
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 10px;
+  color: #d1d1d1;
+  transition: color 0.2s;
+}
+
+.bm-item:hover {
+  color: #22C55E;
+}
+
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 20px;
+  right: 36px;
+  top:45px;
+}
+
+@media only screen and (max-width: 768px) {
+  .bm-burger-button {
+    visibility: visible;
+  }
+}
+
+
+.bm-burger-bars {
+  background: #373a47;
+}
+
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+.bm-cross {
+  background: #bdc3c7;
+}
+
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+.bm-item-list {
+  color: #b8b7ad;
+}
+
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+
+

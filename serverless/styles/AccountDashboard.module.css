@@ -1,0 +1,91 @@
+.main {
+  display: flex;
+  flex-direction: row;
+}
+
+.container {
+  padding: 2rem;
+  height: fit-content;
+}
+
+
+.listContainer {
+  padding-bottom: 2rem;
+  height: 18rem;
+  overflow: auto;
+}
+
+.titles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.icons{
+  height: 2rem;
+  width: 2rem;
+  color: rgba(0, 105, 117, 0.82);
+}
+
+.iconsBin{
+  height: 2rem;
+  width: 2rem;
+  color: rgba(255, 0, 0, 0.56);
+}
+
+.iconsEdit{
+  height: 2rem;
+  width: 2rem;
+  color: rgba(0, 105, 117, 0.82);
+}
+
+.icons:hover {
+  cursor: pointer;
+  color: #000;
+}
+
+.iconsBin:hover {
+  cursor: pointer;
+  color: #000;
+}
+
+.iconsEdit:hover {
+  cursor: pointer;
+  color: #000;
+}
+
+.tr:nth-child(even) {
+  /*class="bg-gray-50";*/
+  background: rgba(87, 188, 144, 0.2);
+}
+.tr:nth-child(odd) {
+  /*    class="bg-white";*/
+  /*background: rgba(119, 201, 212, 0.2);*/
+}
+
+/*.items {*/
+/*  width: 90rem;*/
+/*  display: flex;*/
+/*  flex-direction: row;*/
+/*  justify-content: space-between;*/
+/*  border-bottom: 1px solid black;*/
+/*  align-content: center;*/
+/*  padding: 0 2rem;*/
+/*}*/
+
+/*.lists {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  height: 12rem;*/
+/*  overflow: auto;*/
+/*}*/
+
+/*.item {*/
+/*  width: 15%;*/
+/*  justify-content: space-between;*/
+/*  margin: 0.25rem 0 0 0;*/
+/*}*/
+
+/*.items:nth-child(odd) {*/
+/*  background: lightblue !important;*/
+/*}*/

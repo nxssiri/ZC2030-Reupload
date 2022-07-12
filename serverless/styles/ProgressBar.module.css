@@ -1,0 +1,39 @@
+.h1 {
+  margin-bottom: 20px;
+  margin-right: 40px;
+  font-size: 15px;
+}
+
+.container {
+  width: 100%;
+  padding-left: 15px;
+  margin-top: 30px;
+  background: #d2ede3;
+  border: solid 2px #57bc90;
+  border-radius: 0.75rem;
+}
+
+.column {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  width: available;
+}
+
+.row {
+  margin-top: 18px;
+  text-align: center;
+  width: 50%;
+}
+
+.progressBar {
+  width: 45px;
+}
+
+.button {
+  margin-top: 10px;
+  color: black;
+  background: #57bc90;
+  border: solid 3px #57bc90;
+  width: 150px;
+}

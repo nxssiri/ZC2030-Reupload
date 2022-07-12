@@ -1,0 +1,113 @@
+.container {
+  padding: 0 0;
+}
+
+/*.main {*/
+/*  flex-direction: column;*/
+/*}*/
+
+.openingBox {
+  background: rgb(137, 199, 193);
+  background: linear-gradient(
+    0deg,
+    rgb(137, 199, 193) 0%,
+    rgb(87, 188, 144) 50%,
+    rgb(87, 188, 144) 90%,
+    rgb(87, 188, 144) 100%
+  );
+  padding: 3rem 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*.groupImg {*/
+/*  height: 13rem;*/
+/*  width: auto;*/
+/*  margin: 0 0 2rem 0;*/
+/*}*/
+
+/*.rightSide {*/
+/*  padding: 3rem;*/
+/*  !*position: relative;*!*/
+/*  left: -5rem;*/
+/*  top: 5rem;*/
+/*}*/
+
+/*.summaryHeader {*/
+/*  color: rgba(255, 255, 255);*/
+/*  text-transform: uppercase;*/
+/*  font-size: 50pt;*/
+/*  !*position: relative;*!*/
+/*  left: 10rem;*/
+/*  font-weight: lighter;*/
+/*}*/
+
+/*.summaryPara {*/
+/*  color: white;*/
+/*  font-size: 16pt;*/
+/*}*/
+
+/*.ocean{*/
+/*  height: 100px; !* change the height of the waves here *!*/
+/*  width: 100%;*/
+/*  position: relative;*/
+/*  bottom: 0;*/
+/*  left: 0;*/
+/*  right: 0;*/
+/*  overflow-x: hidden;*/
+/*}*/
+
+.wave {
+  position: absolute;
+  width: 800%;
+  height: 100%;
+  animation: wave 20s -3s linear infinite;
+  left: -200%;
+}
+
+.wave:nth-of-type(2) {
+  animation: wave 20s linear reverse infinite;
+}
+
+.wave:nth-of-type(3) {
+  animation: wave 25s -6s linear infinite;
+}
+
+.wave:nth-of-type(4) {
+  animation: wave 30s -1s linear reverse infinite;
+}
+
+@keyframes wave {
+  0% {transform: translateX(-25%);}
+  50% {transform: translateX(25%);}
+  100% {transform: translateX(-25%);}
+}
+
+/*.projects {*/
+/*  min-height: 30vh;*/
+/*  padding: 3rem 3rem;*/
+/*  color: black;*/
+/*}*/
+
+/*.teamHeader {*/
+/*  color: Black;*/
+/*  text-transform: uppercase;*/
+/*  font-weight: lighter;*/
+/*  padding: 0 0 2rem 0;*/
+/*}*/
+
+/*.profileCards {*/
+/*  display: flex;*/
+/*  flex-direction: row;*/
+/*}*/
+
+.profileCard {
+  width: 15rem;
+  background: rgba(119, 201, 212, 1);
+  padding: 1rem;
+  margin: 0 1rem;
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+}

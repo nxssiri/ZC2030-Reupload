@@ -1,0 +1,13 @@
+.main {
+  display: flex;
+  flex-direction: row;
+}
+
+.content{
+  padding-left: 12rem;
+}
+
+.calculators{
+  padding: 2rem;
+  width: 85vw;
+}

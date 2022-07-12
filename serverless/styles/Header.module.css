@@ -1,0 +1,24 @@
+.navbar {
+  border-bottom: solid 1px #eaeaea;
+  position: fixed;
+  top: 0;
+}
+
+.nav {
+  width: 200px;
+}
+
+.navFont {
+  font-weight: normal;
+  font-size: 25px;
+  margin-right: 25%;
+}
+
+.navFont:hover {
+  border-bottom: solid 1px black;
+}
+
+.img {
+  height: 100px;
+  width: 130px;
+}
